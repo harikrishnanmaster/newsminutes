@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
-    {% load static %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/news.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Newsapp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body style="background-image: url('{% static "images/bg-image.jpg"%}');">
+<body>
 
-    <div class="jumbotron" style="background-image: url('{% static "images/bg-image.jpg"%}');">
-        <center><h1 style="color: snow;font-weight: bold;"><marquee>BREAKING NEWS</marquee></h1>
-            <a href="{% url 'scrape' %}" class="btn btn-success">ENGLISH</a>
-	    <a href="{% url 'scrape_malayalam' %}" class="btn btn-success">MALAYALAM</a>
-	    <a href="{% url 'logout' %}" class="btn btn-success">LOGIN</a>
-
-        </form>
-    </center>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NEWSAPP</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="english_login">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Language <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="english_login">English</a></li>
+          <li><a href="malayalam_login">Malayalam</a></li>
+          <li><a href="#">Hindi</a></li>
+        </ul>
+      </li>
+      <li><a href="#">India</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="account"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
-        <div class="row">
-    {% for object in object_list %}
+  <div class="row">
 
-  <img  src = "{{ object.image }}">
+   {% for object in object_list %}
+   {% if object.language == '2'  %}
+   {% if object.category == '1'  %}
+    <a href="{{object.url}}"><h5>{{object.title}}</h5></a>
+<img  src = "{{ object.image }}">{{object.title}}
+   {% endif %}
+   {% endif %}
 
 
-      <a href="{{object.url}}">{{object.title}}</a>
+<!--  <div  style="width:50%; float:right">-->
+<!--    <h5>{{object.title}}</h5>-->
+<!--</div>-->
+
+
+
+
+
 
 
   {% endfor %}
-</div>
+
+
+<!--    <div class="col-6">-->
+<!-- {% for object in object_list %}-->
+
+<!--  <img class="card-img-top" src = "{{ object.image }}">-->
+
+
+<!--&lt;!&ndash;      <a href="{{object.url}}"><h5>{{object.title}}</h5></a>&ndash;&gt;-->
+
+
+<!--  {% endfor %}-->
+<!--    </div>-->
+  </div>
 </div>
 
-    <script
-src="http://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
