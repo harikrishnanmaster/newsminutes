@@ -24,7 +24,7 @@
           <li><a href="#">Hindi</a></li>
         </ul>
       </li>
-      <li><a href="#">India</a></li>
+      <li><a href="malayalam_india_login">India</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="account"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -34,13 +34,30 @@
 </nav>
 
 <div class="container">
+
   <div class="row">
 
    {% for object in object_list %}
    {% if object.language == '2'  %}
    {% if object.category == '1'  %}
-    <a href="{{object.url}}"><h5>{{object.title}}</h5></a>
-<img  src = "{{ object.image }}">{{object.title}}
+<!--    <a href="{{object.url}}"><h5>{{object.title}}</h5></a>-->
+
+    <table>
+   <tr>
+     <td>
+
+    <img  src = "{{ object.image }}" >
+      </td>
+<td>
+    <h3 style="color:black;"><b>{{object.title}}</b></h3>
+      <p>{{object.content}}</p>
+    <a style="width=50%px" href="{{object.url}}">read more</a>
+</td>
+    </tr></table>
+<!--    <a style="width=50%px" href="{{object.url}}">read more</a>-->
+      <hr>
+
+
    {% endif %}
    {% endif %}
 

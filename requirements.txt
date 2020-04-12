@@ -1,0 +1,7 @@
+django
+gunicorn
+django-heroku
+django-bootstrap3
+requests
+bs4
+dj-static

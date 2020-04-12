@@ -4,12 +4,14 @@ from django.db import models
 from django.db import models
 from django.utils import timezone
 class Headline(models.Model):
-  title = models.CharField(max_length=200)
+  title = models.TextField()
   image = models.URLField(null=True, blank=True)
   url = models.TextField()
   date = models.DateField(auto_now_add=True)
   language = models.CharField(max_length=200)
   category = models.CharField(max_length=200)
+  content = models.TextField()
+  # check = models.TextField()
 
 
   def __str__(self):
