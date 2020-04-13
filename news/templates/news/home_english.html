@@ -19,12 +19,25 @@
       <li class="active"><a href="english_login">Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Language <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="english_login">English</a></li>
+          <li class="active"><a href="english_login">English</a></li>
           <li><a href="malayalam_login">Malayalam</a></li>
           <li><a href="#">Hindi</a></li>
         </ul>
       </li>
-      <li><a href="english_india">India</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="english_india">India</a></li>
+          <li class="active"><a href="english_login">Trending</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Movies</a></li>
+        </ul>
+      </li>
+      <li><a href="search">Search</a></li>
+<!--        <li>-->
+<!--        <input id="dob" name="dob" type="date">-->
+<!--        </li>-->
+<!--      <li><a href="english_india">India</a></li>-->
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="account"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -39,6 +52,9 @@
    {% for object in object_list %}
    {% if object.language == '1'  %}
    {% if object.category == '1'  %}
+      {% if object.date == date_today  %}
+
+
     <table>
    <tr>
      <td>
@@ -53,6 +69,7 @@
     </tr></table>
 <!--    <a style="width=50%px" href="{{object.url}}">read more</a>-->
       <hr>
+   {% endif %}
    {% endif %}
    {% endif %}
 

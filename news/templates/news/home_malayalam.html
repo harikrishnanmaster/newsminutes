@@ -20,11 +20,20 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Language <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="english_login">English</a></li>
-          <li><a href="malayalam_login">Malayalam</a></li>
+          <li class="active"><a href="malayalam_login">Malayalam</a></li>
           <li><a href="#">Hindi</a></li>
         </ul>
       </li>
-      <li><a href="malayalam_india_login">India</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="malayalam_india_login">India</a></li>
+          <li class="active"><a href="malayalam_login">Trending</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Movies</a></li>
+        </ul>
+      </li>
+<!--      <li><a href="malayalam_india_login">India</a></li>-->
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="account"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -40,6 +49,7 @@
    {% for object in object_list %}
    {% if object.language == '2'  %}
    {% if object.category == '1'  %}
+      {% if object.date == date_today  %}
 <!--    <a href="{{object.url}}"><h5>{{object.title}}</h5></a>-->
 
     <table>
@@ -58,6 +68,7 @@
       <hr>
 
 
+   {% endif %}
    {% endif %}
    {% endif %}
 
