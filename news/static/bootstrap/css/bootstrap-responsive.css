@@ -397,6 +397,7 @@
   .uneditable-input.span11 {
     width: 1056px;
   }
+
   input.span10,
   textarea.span10,
   .uneditable-input.span10 {
@@ -864,12 +865,17 @@
   select[class*="span"],
   textarea[class*="span"],
   .uneditable-input {
-    display: block;
-    width: 100%;
-    min-height: 30px;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    display: inline-block;
+height: 20px;
+padding: 4px 6px;
+margin-bottom: 10px;
+font-size: 14px;
+line-height: 20px;
+color: #555;
+vertical-align: middle;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
   }
   .input-prepend input,
   .input-append input,

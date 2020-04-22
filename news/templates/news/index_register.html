@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <!-- first load django static tag. -->
+    {% load static %}
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+<!--	<div class="limiter">-->
+<!--		<div class="container-login100" style="background-image: url('/static/images/bg-01.jpg');">-->
+<!--			<div class="wrap-login100 p-t-30 p-b-50">-->
+<!--				<span class="login100-form-title p-b-41">-->
+<!--					Account Login-->
+<!--				</span>-->
+<!--				<div class="background-wrap">-->
+<!--  <div class="background"></div>-->
+<!--</div>-->
+
+<form name = "form" action = "{% url "register" %}"
+         method = "POST" >{% csrf_token %}
+  <h1 id="litheader">Create an account</h1>
+  <div class="inset">
+
+    <div class="form-row">
+     <label class="col-sm-2 col-form-label"  for="name">Name</label>
+     <input type="text" class="form-control col-sm-10" name="name" id="name" />
+  </div>
+	  <div class="form-row">
+     <label class="col-sm-2 col-form-label"  for="name">Email</label>
+     <input type="text" class="form-control col-sm-10" type="email" name="email" required id="name" />
+  </div>
+	  <div class="form-row">
+     <label class="col-sm-2 col-form-label"  for="name">Password</label>
+     <input type="text" class="form-control col-sm-10" type="password" name="password" required id="name" />
+  </div>
+	  <div class="form-row">
+		  <label class="col-sm-2 col-form-label"  for="la">Language</label>
+		  <div class="select_box">
+
+                    <select  name="language" id="la">
+              <option placeholder="" value="1">English</option>
+              <option value="2">Malayalam</option>
+
+            </select>
+		  </div>
+
+
+<input class="loginLoginValue" type="hidden" name="service" value="login" />
+
+
+  </div>
+
+  <p class="p-container">
+    <input type="submit" name="register" id="go" value="register">
+  </p>
+</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'css/vendor/jquery/jquery-3.2.1.min.js'	%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'css/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'css/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'css/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'css/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'css/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'css/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'css/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main_login.js' %}"></script>
+
+</body>
+</html>

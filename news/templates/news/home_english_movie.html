@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Newsapp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      @media only screen and (min-width: 0px) and (max-width: 700px) {
+    td {
+        display:inline-block;
+        padding:5px;
+        width:100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NEWSAPP</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="english_login">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Language <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="active"><a href="english_login">English</a></li>
+          <li><a href="malayalam_login">Malayalam</a></li>
+<!--          <li><a href="#">Hindi</a></li>-->
+        </ul>
+      </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="english_india">India</a></li>
+          <li ><a href="english_login">Trending</a></li>
+          <li ><a href="english_tech_login">Technology</a></li>
+          <li><a href="english_sports_login">Sports</a></li>
+          <li class="active"><a href="english_movie_login">Movies</a></li>
+        </ul>
+      </li>
+      <li><a href="search">Search</a></li>
+<!--        <li>-->
+<!--        <input id="dob" name="dob" type="date">-->
+<!--        </li>-->
+<!--      <li><a href="english_india">India</a></li>-->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="account"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+
+   {% for object in object_list %}
+   {% if object.language == '1'  %}
+   {% if object.category == '3'  %}
+      {% if object.date == date_today  %}
+
+
+    <table>
+   <tr>
+     <td>
+
+    <img  src = "{{ object.image }}" >
+      </td>
+<td>
+    <h3 style="color:black;"><b>{{object.title}}</b></h3>
+      <p>{{object.content}}</p>
+    <a style="width=50%px" href="{{object.url}}">read more</a>
+</td>
+    </tr></table>
+<!--    <a style="width=50%px" href="{{object.url}}">read more</a>-->
+      <hr>
+   {% endif %}
+   {% endif %}
+   {% endif %}
+
+
+<!--  <div  style="width:50%; float:right">-->
+<!--    <h5>{{object.title}}</h5>-->
+<!--</div>-->
+
+
+
+
+
+
+
+  {% endfor %}
+
+
+<!--    <div class="col-6">-->
+<!-- {% for object in object_list %}-->
+
+<!--  <img class="card-img-top" src = "{{ object.image }}">-->
+
+
+<!--&lt;!&ndash;      <a href="{{object.url}}"><h5>{{object.title}}</h5></a>&ndash;&gt;-->
+
+
+<!--  {% endfor %}-->
+<!--    </div>-->
+  </div>
+</div>
+
+</body>
+</html>

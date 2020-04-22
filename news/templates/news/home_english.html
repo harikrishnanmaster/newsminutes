@@ -4,9 +4,21 @@
   <title>Newsapp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      @media only screen and (min-width: 0px) and (max-width: 700px) {
+    td {
+        display:inline-block;
+        padding:5px;
+        width:100%;
+    }
+}
+
+    </style>
 </head>
 <body>
 
@@ -21,16 +33,16 @@
         <ul class="dropdown-menu">
           <li class="active"><a href="english_login">English</a></li>
           <li><a href="malayalam_login">Malayalam</a></li>
-          <li><a href="#">Hindi</a></li>
+<!--          <li><a href="#">Hindi</a></li>-->
         </ul>
       </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="english_india">India</a></li>
           <li class="active"><a href="english_login">Trending</a></li>
-          <li><a href="#">Technology</a></li>
-          <li><a href="#">Sports</a></li>
-          <li><a href="#">Movies</a></li>
+          <li><a href="english_tech_login">Technology</a></li>
+          <li><a href="english_sports_login">Sports</a></li>
+          <li><a href="english_movie_login">Movies</a></li>
         </ul>
       </li>
       <li><a href="search">Search</a></li>
